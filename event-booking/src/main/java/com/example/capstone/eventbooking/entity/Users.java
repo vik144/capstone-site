@@ -9,7 +9,9 @@ public class Users {
 	@Id
 	private long customer_id;
 
-	private String customerName;
+	private String first_name;
+	
+	private String last_name;
 	
 	private String password;
 	
@@ -17,14 +19,16 @@ public class Users {
 	
 	private String address;
 	
+	
+
 	public Users() {
-		
 	}
 
-	public Users(long customer_id, String customerName, String password, String email, String address) {
+	public Users(long customer_id, String first_name, String last_name, String password, String email, String address) {
 		super();
 		this.customer_id = customer_id;
-		this.customerName = customerName;
+		this.first_name = first_name;
+		this.last_name = last_name;
 		this.password = password;
 		this.email = email;
 		this.address = address;
@@ -38,13 +42,6 @@ public class Users {
 		this.customer_id = customer_id;
 	}
 
-	public String getCustomerName() {
-		return customerName;
-	}
-
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
-	}
 
 	public String getPassword() {
 		return password;
@@ -69,11 +66,31 @@ public class Users {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	
+	
+
+	public String getFirst_name() {
+		return first_name;
+	}
+
+	public void setFirst_name(String first_name) {
+		this.first_name = first_name;
+	}
+
+	public String getLast_name() {
+		return last_name;
+	}
+
+	public void setLast_name(String last_name) {
+		this.last_name = last_name;
+	}
 
 	@Override
 	public String toString() {
-		return "User [customer_id=" + customer_id + ", customerName=" + customerName + ", password=" + password
-				+ ", email=" + email + ", address=" + address + "]";
+		return "Users [customer_id=" + customer_id + ", first_name=" + first_name + ", last_name=" + last_name
+				+ ", password=" + password + ", email=" + email + ", address=" + address + "]";
 	}
+
+	
 	
 }

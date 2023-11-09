@@ -9,23 +9,26 @@ import jakarta.persistence.Id;
 public class Event {
 
 	@Id
-	private Integer event_id;
+	private long event_id;
 	
 	private Date event_date;
 	
 	private String event_name;
 	
+	private String event_location;
+	
 	public Event() {
 	}
 
-	public Event(Integer event_id, Date date, String event_name) {
+	public Event(Integer event_id, Date date, String event_name, String event_location) {
 		super();
 		this.event_id = event_id;
 		this.event_date = date;
 		this.event_name = event_name;
+		this.event_location = event_location;
 	}
 	
-	public Integer getEvent_id() {
+	public long getEvent_id() {
 		return event_id;
 	}
 	public void setEvent_id(Integer event_id) {
@@ -44,9 +47,15 @@ public class Event {
 		this.event_name = event_name;
 	}
 
+	public String getEvent_Location() {
+		return event_location;
+	}
+	public void setEvent_location(String event_location) {
+		this.event_location = event_location;
+	}
 	@Override
 	public String toString() {
-		return "Event [event_id=" + event_id + ", event_date=" + event_date + ", event_name=" + event_name + "]";
+		return "Event [event_id=" + event_id + ", event_date=" + event_date + ", event_name=" + event_name + ", event_location ="+event_location+"]";
 	}
 	
 	

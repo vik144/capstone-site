@@ -16,7 +16,7 @@ public class UserService implements UserDaoService{
 	@Override
 	public void createUser(Users user) {
 		// TODO Auto-generated method stub
-		if(!(user.getCustomerName().isEmpty() || user.getAddress().isEmpty() || 
+		if(!(user.getFirst_name().isEmpty()|| user.getLast_name().isEmpty() || user.getAddress().isEmpty() || 
 			user.getEmail().isEmpty() || user.getPassword().isEmpty())) {
 			userRepository.save(user);
 		}
@@ -24,9 +24,17 @@ public class UserService implements UserDaoService{
 	}
 
 	@Override
-	public boolean verifyUser(String user_name, String password) {
+	public boolean verifyUser(String email, String password) {
 		// TODO Auto-generated method stub
-		return userRepository.findByCustomerName(user_name).getPassword().equals(password);
+		return userRepository.findByEmail(email).getPassword().equals(password);
 	}
 
+	@Override
+	public Users getUserDetails(String email, String password) {
+		// TODO Auto-generated method stub
+		Users userDetails = verifyUser(email, password)? userRepository.findByEmail(email): new Users();
+		return userDetails;
+	}
+
+	
 }
