@@ -22,7 +22,12 @@ public class UserController {
 	}
 	
 	@GetMapping("/verify-user")
-	public boolean verifyUser(@RequestParam String user_name, @RequestParam String password) {
-		return userService.verifyUser(user_name,password);
+	public boolean verifyUser(@RequestParam String email, @RequestParam String password) {
+		return userService.verifyUser(email,password);
+	}
+	
+	@GetMapping("/user-details")
+	public Users getUserDetails(@RequestParam String email, @RequestParam String password) {
+		return userService.getUserDetails(email,password);
 	}
 }

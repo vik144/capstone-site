@@ -7,5 +7,7 @@ public interface UserDaoService {
 	public void createUser(Users user);
 
 	public boolean verifyUser(String user_name, String password);
+
+	public Users getUserDetails(String email, String password);
 	
 }

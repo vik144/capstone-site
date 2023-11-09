@@ -6,5 +6,6 @@ import com.example.capstone.eventbooking.entity.Users;
 
 public interface UserJpa extends JpaRepository<Users, Long>{
 
-	Users findByCustomerName(String user_name);
+	//Users findByCustomerName(String user_name);
+	Users findByEmail(String email);
 }
