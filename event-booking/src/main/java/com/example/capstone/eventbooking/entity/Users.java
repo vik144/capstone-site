@@ -1,12 +1,19 @@
 package com.example.capstone.eventbooking.entity;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Users {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long customer_id;
 
 	private String first_name;
@@ -19,8 +26,9 @@ public class Users {
 	
 	private String address;
 	
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Event> events;
 	
-
 	public Users() {
 	}
 
@@ -67,7 +75,13 @@ public class Users {
 		this.address = address;
 	}
 	
-	
+	public List<Event> getEvents() {
+		return events;
+	}
+
+	public void setEvents(List<Event> events) {
+		this.events = events;
+	}
 
 	public String getFirst_name() {
 		return first_name;

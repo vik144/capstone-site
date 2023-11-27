@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.capstone.eventbooking.dao.EventsDaoService;
 import com.example.capstone.eventbooking.entity.Event;
 import com.example.capstone.eventbooking.service.EventBookingService;
 
@@ -16,16 +17,28 @@ import com.example.capstone.eventbooking.service.EventBookingService;
 public class EventController {
 	
 	@Autowired
-	private EventBookingService service;
+	private EventsDaoService service;
 	
-	// User and admin visibility
 	@GetMapping(path="/events")
 	public List<Event> retriveEvents(){
 		return service.retriveAllEvents();
 	}
 	
+	@GetMapping(path="/event")
+	public Event getEvent(@RequestBody long event_id) {
+		return service.getEvent(event_id);
+	}
 	
-	//Admin side
+	@GetMapping(path="/user/events")
+	public List<Event> getUserEvents(@RequestBody int user_id){
+		return service.getUserEvents(user_id);
+	}
+	
+	@GetMapping(path="/user/events")
+	public void bookEvent(@RequestBody long user_id,@RequestBody long event_id){
+		service.bookEvent(user_id,event_id);
+	}
+	
 	@PostMapping(path="/events")
 	public void addEvent(@RequestBody Event event) {
 		service.addEvent(event);
