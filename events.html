@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-white">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capstone Project</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+
+
+  </head>
+
+  <body class="h-full">
+     <!-- navigation bar start -->
+     <nav class="bg-gray-800">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <!-- Mobile menu button-->
+            <button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <!--
+                Icon when menu is closed.
+    
+                Menu open: "hidden", Menu closed: "block"
+              -->
+              <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+              <!--
+                Icon when menu is open.
+    
+                Menu open: "block", Menu closed: "hidden"
+              -->
+              <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+            <div class="flex flex-shrink-0 items-center">
+              <img class="h-8 w-auto" src="img/logo.png" alt="Your Company" />
+            </div>
+            <div class="hidden sm:ml-6 sm:block">
+              <div class="flex space-x-4">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a href="index.html" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
+                <a href="about.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
+                <a href="events.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Events</a>
+
+                  <a href="login.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Login</a>
+                  <a href="create-event.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Dashboard</a>
+
+              </div>
+            </div>
+          </div>
+          <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <button type="button" class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+              <span class="sr-only">View notifications</span>
+              <a href="login.html">
+                <img src="img/right-arrow.png" class=w-8 alt="" srcset="">
+              </a>
+            </button>
+
+            <!-- Profile dropdown -->
+            <!-- <div class="relative ml-3">
+              <div>
+                <button type="button" class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                  <span class="sr-only">Open user menu</span>
+                  <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+                </button>
+              </div> -->
+
+              <!--
+                Dropdown menu, show/hide based on menu state.
+    
+                Entering: "transition ease-out duration-100"
+                  From: "transform opacity-0 scale-95"
+                  To: "transform opacity-100 scale-100"
+                Leaving: "transition ease-in duration-75"
+                  From: "transform opacity-100 scale-100"
+                  To: "transform opacity-0 scale-95"
+              -->
+              <!-- <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1"> -->
+                <!-- Active: "bg-gray-100", Not Active: "" -->
+                <!-- <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+              </div> -->
+            <!-- </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Mobile menu, show/hide based on menu state. -->
+      <!-- <div class="sm:hidden" id="mobile-menu">
+        <div class="space-y-1 px-2 pb-3 pt-2"> -->
+          <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+          <!-- <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Dashboard</a>
+          <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
+          <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
+          <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
+        </div>
+      </div> -->
+    </nav>
+  <!-- nav bar end -->
+    <div class="text-center p-10">
+      <h1 class="font-bold text-4xl mb-4">Explore Trending Events</h1>
+      <h5 class="text-xl">Browse happening events all around you.</h5>
+    </div>
+
+    <!-- ✅ Grid Section - Starts Here 👇 -->
+    <section id="events" class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
+      <!--   ✅ Event card 1 Template - Starts Here 👇 -->
+      <!-- <div class="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+        <a href="event-detail.html">
+          <img src="img/frontend.jpeg" alt="Event" class="h-80 w-72 object-cover rounded-t-xl" />
+          <div class="px-4 py-3 w-72">
+            <span class="text-gray-400 mr-3 uppercase text-xs">Event Category</span>
+            <p class="text-lg font-bold text-black truncate block capitalize">Event Name</p>
+            <div class="flex items-center">
+              <p class="text-lg font-semibold text-black cursor-auto my-3">$149</p>
+              <del>
+                <p class="text-sm text-gray-600 cursor-auto ml-2">$199</p>
+              </del>
+              <div class="ml-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
+                  <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div> -->
+      <!--   🛑 Event card 1 - Ends Here  -->
+
+
+    </section>
+
+    <!-- 🛑 Grid Section - Ends Here -->
+
+
+
+    <script>
+
+      
+      fetch('https://v1.appbackend.io/v1/rows/Mq54ulzMSJv8')
+ .then(response => response.json())
+ .then(data => {
+  const dataArray = Object.values(data);
+
+ dataArray.forEach(events => {
+  //loop through each event array
+  for(i=0; i<events.length; i++){
+    event = events[i];
+    if(event == null){
+      continue;
+    }
+    console.log(event);
+    const card = document.createElement('div');
+    card.className = 'w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl';
+
+    // Create the img element
+    const img = document.createElement('img');
+    img.src = event.attachment;
+    img.alt = 'Event';
+    img.className = 'h-80 w-72 object-cover rounded-t-xl';
+
+    // Create the div for the event details
+    const eventDetails = document.createElement('div');
+    eventDetails.className = 'px-4 py-3 w-72';
+
+    // Create the event category
+    const eventCategory = document.createElement('span');
+    eventCategory.className = 'text-gray-400 mr-3 uppercase text-xs';
+    eventCategory.innerText = event.category;
+
+    // Create the event name
+    const eventName = document.createElement('p');
+    eventName.className = 'text-lg font-bold text-black truncate block capitalize';
+    eventName.innerText = event.name;
+
+    // Create the div for the event price
+    const eventPrice = document.createElement('p');
+    eventPrice.className = 'text-lg font-semibold text-black cursor-auto my-3';
+    eventPrice.innerText = `$${event.price}`;
+
+    // Create the original price
+    const eventOriginalPrice = document.createElement('p');
+    eventOriginalPrice.className = 'text-sm text-gray-600 cursor-auto ml-2';
+    eventOriginalPrice.innerText = `$${event.price * 1.5}`; // Assuming original price is 1.5 times the current price
+
+    // Append the elements to the card
+    eventDetails.appendChild(eventCategory);
+    eventDetails.appendChild(eventName);
+    eventDetails.appendChild(eventPrice);
+    eventDetails.appendChild(eventOriginalPrice);
+    card.appendChild(img);
+    card.appendChild(eventDetails);
+
+    // Append the card to the container
+    const container = document.querySelector('#events');
+    container.appendChild(card);
+  }
+
+  
+});
+
+ })
+ .catch(error => console.error('Error:', error));
+
+
+    </script>
+  </body>
+</html>
